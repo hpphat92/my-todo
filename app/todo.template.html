@@ -1,5 +1,5 @@
 <div *ngIf="!this.editting">
-    {{content.id}} - {{content.content}} [<a href="javascript:void(0)" (click)="onEdit()">Edit</a>][<a href="javascript:void(0)" (click)="removeTodo()">X</a>]</div>
+    {{content.content}} [<a href="javascript:void(0)" (click)="onEdit()">Edit</a>][<a href="javascript:void(0)" (click)="removeTodo()">X</a>]</div>
 
 <div *ngIf="this.editting">
     <editor (addNew)="onEditTodo($event)" [content]="content.content"></editor>
