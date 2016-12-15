@@ -1,0 +1,7 @@
+<h1>My Todo Application</h1>
+<br>
+<editor (addNew)="onAddNewTodo($event)"></editor>
+<br>
+<li *ngFor="let todo of todoes">
+    <todo [content]="todo" (onRemove)="removeTodo(todo)"></todo>
+</li>
