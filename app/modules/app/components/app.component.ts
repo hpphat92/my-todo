@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Todo} from './todo';
-import './todo.component';
+import {Todo} from '../../../common/model/todo';
+import '../../../common/components/todoComponent/todo.component';
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    templateUrl: './app.template.html',
+    templateUrl: './../templates/app.template.html',
 })
 export class AppComponent implements OnInit {
     todoes: Todo[] = [];
