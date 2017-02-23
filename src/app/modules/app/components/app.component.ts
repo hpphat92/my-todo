@@ -1,12 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, QueryList, ViewChildren} from '@angular/core';
 import {Todo} from '../../../common/model/todo.js';
+import {todoComponent} from '../../../common/components/todo/index.js'
 @Component({
     moduleId: module.id,
     selector: 'my-app',
     templateUrl: './../templates/app.template.html',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     todoes: Todo[] = [];
+    _todoComponents: todoComponent[] = [];
+    @ViewChildren(todoComponent) todoComponents: QueryList<todoComponent>;
 
     _generateId(): string {
         function s4() {
@@ -14,6 +17,7 @@ export class AppComponent implements OnInit {
                 .toString(16)
                 .substring(1);
         }
+
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
             s4() + '-' + s4() + s4() + s4();
     }
@@ -44,5 +48,11 @@ export class AppComponent implements OnInit {
         if (idx >= 0) {
             this.todoes.splice(idx, 1);
         }
+    }
+    ngAfterViewInit() {
+        this._todoComponents = this.todoComponents.toArray();
+    }
+    showAlert(index: number): void {
+        console.log(this._todoComponents[index].showAlert());
     }
 }

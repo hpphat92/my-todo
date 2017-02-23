@@ -6,7 +6,6 @@ import  {Todo} from '../../model/todo.js';
     templateUrl: 'templates/todo.html'
 })
 export class todoComponent {
-    @Input() content: Todo;
     @Output() onRemove = new EventEmitter();
     public editting: boolean;
 
@@ -15,11 +14,14 @@ export class todoComponent {
     }
 
     onEditTodo(content: string): void {
-        this.content.content = content;
         this.editting = false;
     }
 
     onEdit(): void {
         this.editting = !this.editting;
+    }
+
+    showAlert(): void {
+        alert('Something wrong.')
     }
 }

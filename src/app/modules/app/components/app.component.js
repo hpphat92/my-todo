@@ -9,9 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var index_js_1 = require('../../../common/components/todo/index.js');
 var AppComponent = (function () {
     function AppComponent() {
         this.todoes = [];
+        this._todoComponents = [];
     }
     AppComponent.prototype._generateId = function () {
         function s4() {
@@ -47,6 +49,16 @@ var AppComponent = (function () {
             this.todoes.splice(idx, 1);
         }
     };
+    AppComponent.prototype.ngAfterViewInit = function () {
+        this._todoComponents = this.todoComponents.toArray();
+    };
+    AppComponent.prototype.showAlert = function (index) {
+        console.log(this._todoComponents[index].showAlert());
+    };
+    __decorate([
+        core_1.ViewChildren(index_js_1.todoComponent), 
+        __metadata('design:type', core_1.QueryList)
+    ], AppComponent.prototype, "todoComponents", void 0);
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
