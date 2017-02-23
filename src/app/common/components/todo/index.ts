@@ -3,7 +3,7 @@ import  {Todo} from '../../model/todo.js';
 @Component({
     moduleId: module.id,
     selector: 'todo',
-    templateUrl: 'todo.template.html'
+    templateUrl: 'templates/todo.html'
 })
 export class todoComponent {
     @Input() content: Todo;

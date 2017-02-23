@@ -3,7 +3,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 @Component({
     moduleId: module.id,
     selector: 'editor',
-    templateUrl: 'editor.template.html'
+    templateUrl: 'templates/editor.html'
 })
 export class editorComponent {
     @Output() addNew = new EventEmitter();

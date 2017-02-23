@@ -28,11 +28,11 @@ var editorComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'editor',
-            templateUrl: 'editor.template.html'
+            templateUrl: 'templates/editor.html'
         }), 
         __metadata('design:paramtypes', [])
     ], editorComponent);
     return editorComponent;
 }());
 exports.editorComponent = editorComponent;
-//# sourceMappingURL=editor.component.js.map
+//# sourceMappingURL=index.js.map
